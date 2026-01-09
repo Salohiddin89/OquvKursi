@@ -1,0 +1,56 @@
+/* Sidebar background */
+#header {
+    background: linear-gradient(135deg, #5a2ea6, #7b3fe0) !important;
+}
+
+/* Header text */
+#header h1,
+#header a {
+    color: #fff !important;
+}
+
+/* Module headers */
+.module h2,
+.module caption {
+    background: #7b3fe0 !important;
+    color: #fff !important;
+}
+
+/* Buttons */
+.button,
+input[type=submit],
+.submit-row input {
+    background: #7b3fe0 !important;
+    border-color: #5a2ea6 !important;
+    color: #fff !important;
+}
+
+.button:hover,
+input[type=submit]:hover {
+    background: #5a2ea6 !important;
+}
+
+/* Links */
+a {
+    color: #5a2ea6 !important;
+}
+
+a:hover {
+    color: #7b3fe0 !important;
+}
+
+/* Login page */
+.login #container {
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.login #header {
+    background: transparent !important;
+}
+
+.login .submit-row input {
+    background: #7b3fe0 !important;
+    border-color: #5a2ea6 !important;
+}
