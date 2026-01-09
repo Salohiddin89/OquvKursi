@@ -174,10 +174,6 @@ class UserTelegramAdmin(admin.ModelAdmin):
 # -------------------------
 
 
-@admin.register(UserTelegram)
-
-
-
 
 
 
