@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ro‘yxatdan o‘tish</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="auth-page">
+
+    <div class="auth-container">
+        <h2 class="auth-title">Ro‘yxatdan o‘tish</h2>
+        <p class="auth-subtitle">Yangi profil yaratish uchun formani to‘ldiring</p>
+
+        {% if messages %}
+        {% for message in messages %}
+        <p style="color: #dc3545; font-size: 14px;">{{ message }}</p>
+        {% endfor %}
+        {% endif %}
+
+        <form method="POST" class="auth-form">
+            {% csrf_token %}
+            <input type="text" name="first_name" placeholder="Ism" required>
+            <input type="text" name="last_name" placeholder="Familiya" required>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Parol" required>
+            <input type="password" name="confirm" placeholder="Parolni tasdiqlang" required>
+
+            <button type="submit" class="auth-btn">Ro‘yxatdan o‘tish</button>
+        </form>
+
+        <p class="auth-link">
+            Allaqachon hisobingiz bormi? <a href="{% url 'login' %}">Kirish</a>
+        </p>
+    </div>
+
+</body>
+
+</html>

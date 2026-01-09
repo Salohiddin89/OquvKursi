@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mening profilim</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="purchase-page">
+
+    <div class="profile-page-container">
+
+        <div class="profile-header">
+            <div class="profile-header-left">
+                {% if user_obj.avatar %}
+                <img src="{{ user_obj.avatar.url }}" class="profile-avatar-big">
+                {% else %}
+                <div class="profile-avatar-placeholder">
+                    {{ user_obj.first_name|default:user_obj.username|first|upper }}
+                </div>
+                {% endif %}
+                <div>
+                    <h2 class="profile-name">
+                        {{ user_obj.first_name }} {{ user_obj.last_name }}
+                    </h2>
+                    <p class="profile-username">@{{ user_obj.username }}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="profile-tabs">
+            <a href="?tab=courses" class="profile-tab {% if tab == 'courses' %}active{% endif %}">
+                Kurslarim
+            </a>
+            <a href="?tab=messages" class="profile-tab {% if tab == 'messages' %}active{% endif %}">
+                Xabarlar
+            </a>
+            <a href="?tab=settings" class="profile-tab {% if tab == 'settings' %}active{% endif %}">
+                Profilni o‘zgartirish
+            </a>
+        </div>
+
+        <div class="profile-content">
+
+            {% if tab == "courses" %}
+            <!-- ✅ Kurslarim -->
+            {% if purchases %}
+            <div class="course-list">
+                {% for purchase in purchases %}
+                <div class="course-card">
+                    {% if purchase.course.image %}
+                    <img src="{{ purchase.course.image.url }}" class="course-card-image">
+                    {% endif %}
+                    <div class="course-card-body">
+                        <h3 class="course-card-title">{{ purchase.course.title }}</h3>
+                        <p class="course-card-lessons">
+                            Darslar soni: {{ purchase.course.lessons.count }}
+                        </p>
+                        <a href="{% url 'course_detail' purchase.course.id %}" class="btn-buy-sm">
+                            Kursga o‘tish
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p>Hozircha sotib olingan kurslaringiz yo‘q.</p>
+            {% endif %}
+
+            {% elif tab == "messages" %}
+            <!-- ✅ Xabarlar -->
+            {% if messages %}
+            <div class="message-list">
+                {% for msg in messages %}
+                <div class="message-card">
+                    <p class="message-user-text">
+                        <strong>Siz yozgansiz:</strong> {{ msg.message }}
+                    </p>
+                    {% if msg.reply %}
+                    <p class="message-admin-text">
+                        <strong>Admin javobi:</strong> {{ msg.reply }}
+                    </p>
+                    {% else %}
+                    <p class="message-admin-text pending">
+                        Admin javobi hali kelmagan.
+                    </p>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p>Siz hali xabar yubormagansiz.</p>
+            {% endif %}
+
+            {% elif tab == "settings" %}
+            <!-- ✅ Profilni o’zgartirish -->
+            <div class="profile-settings">
+                {% if error %}
+                <p class="error-msg">{{ error }}</p>
+                {% endif %}
+                {% if success %}
+                <p class="success-msg">{{ success }}</p>
+                {% endif %}
+
+                <form method="POST" enctype="multipart/form-data" class="profile-form">
+                    {% csrf_token %}
+
+                    <label>Ism:</label>
+                    <input type="text" name="first_name" value="{{ user_obj.first_name }}" required>
+
+                    <label>Familiya:</label>
+                    <input type="text" name="last_name" value="{{ user_obj.last_name }}" required>
+
+                    <label>Profil rasmi:</label>
+                    <input type="file" name="avatar">
+
+                    {% if user_obj.avatar %}
+                    <img src="{{ user_obj.avatar.url }}" class="profile-avatar-preview">
+                    {% endif %}
+
+                    <button class="btn-buy mt-3">Saqlash</button>
+                </form>
+            </div>
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

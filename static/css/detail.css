@@ -1,0 +1,43 @@
+.course-detail-wrapper {
+    padding: 80px 0;
+}
+
+.course-detail-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 22px;
+    padding: 40px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.07);
+}
+
+.course-detail-card img {
+    border-radius: 18px;
+    width: 100%;
+}
+
+.lesson-box {
+    background: #fff;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    border-radius: 14px;
+    transition: .2s;
+}
+
+.lesson-box:hover {
+    background: #f1f6ff;
+    transform: translateX(5px);
+}
+
+.subscribe-btn {
+    background: #4b8ef1;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 14px;
+    font-size: 18px;
+    transition: .3s;
+}
+
+.subscribe-btn:hover {
+    background: #1a73e8;
+}

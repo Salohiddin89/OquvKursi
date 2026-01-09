@@ -1,0 +1,478 @@
+{% extends "base.html" %}
+{% block title %}Bosh sahifa{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+
+<div class="main-banner" id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="owl-carousel owl-banner">
+                    <div class="item item-1">
+                        <div class="header-text">
+                            <span class="category">Bizning kurslar</span>
+                            <h2>Oliy Ta'lim o'qituvchilari bilan hammasi oson</h2>
+                            <p>Biz sifatli va zamonaviy onlayn o'quv platformasini taklif etamiz. Platformamiz
+                                yetakchi texnologiyalar asosida qurilgan.</p>
+                            <div class="buttons">
+                                <div class="main-button">
+                                    <a href="#">Demo so'rash</a>
+                                </div>
+                                <div class="icon-button">
+                                    <a href="#"><i class="fa fa-play"></i> Batafsil ma'lumot</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item item-2">
+                        <div class="header-text">
+                            <span class="category">Eng yaxshi natija</span>
+                            <h2>Harakatlaringizdagi eng yaxshi natijalarga erishing</h2>
+                            <p>Kurslarimiz siz uchun maxsus tayyorlangan. Har bir o'quvchi shaxsiy e'tibor oladi.
+                            </p>
+                            <div class="buttons">
+                                <div class="main-button">
+                                    <a href="#">Demo so'rash</a>
+                                </div>
+                                <div class="icon-button">
+                                    <a href="#"><i class="fa fa-play"></i> Batafsil ma'lumot</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item item-3">
+                        <div class="header-text">
+                            <span class="category">Onlayn o'qish</span>
+                            <h2>Onlayn o'qish vaqtingizni tejaydi</h2>
+                            <p>Istalgan joydan, istalgan vaqtda o'qish imkoniyati. O'z jadvalingiz bo'yicha
+                                darslarda qatnashing.</p>
+                            <div class="buttons">
+                                <div class="main-button">
+                                    <a href="#">Demo so'rash</a>
+                                </div>
+                                <div class="icon-button">
+                                    <a href="#"><i class="fa fa-play"></i> Onlayn kurs haqida</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="services section" id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <div class="icon">
+                        <img src="{% static 'assets/images/service-01.png' %}" alt="online degrees">
+                    </div>
+                    <div class="main-content">
+                        <h4>Onlayn diplom dasturlari</h4>
+                        <p>Xalqaro sertifikatli onlayn o'quv dasturlari siz uchun.</p>
+                        <div class="main-button">
+                            <a href="#">Batafsil</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <div class="icon">
+                        <img src="{% static 'assets/images/service-02.png' %}" alt="short courses">
+                    </div>
+                    <div class="main-content">
+                        <h4>Qisqa murabbiylik kurslari</h4>
+                        <p>Sizning kasbiy ko'nikmalaringizni tezda yaxshilash uchun maxsus dastur.</p>
+                        <div class="main-button">
+                            <a href="#">Batafsil</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="service-item">
+                    <div class="icon">
+                        <img src="{% static 'assets/images/service-03.png' %}" alt="web experts">
+                    </div>
+                    <div class="main-content">
+                        <h4>Veb mutaxassislari</h4>
+                        <p>Professional veb-dizayn va dasturlash bo'yicha to'liq o'quv dasturi.</p>
+                        <div class="main-button">
+                            <a href="#">Batafsil</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section about-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-1">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Qayerdan boshlaymiz?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, vaqtinchalik matn.
+                                Bu joyga sizning haqiqiy ma'lumotlaringiz keladi.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Qanday hamkorlik qilamiz?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, vaqtinchalik matn.
+                                Bu joyga sizning haqiqiy ma'lumotlaringiz keladi.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Nega SCHOLAR eng yaxshisi?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Saytda yuzdan ortiq javob beriluvchi mos shablonlar mavjud. Siz turli taglar yoki
+                                kategoriyalar bo'yicha ko'rishingiz mumkin.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Eng yaxshi qo'llab-quvvatlashni olamizmi?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Google'da quyidagi so‘zlar bilan qidirishingiz mumkin:
+                                <code>templatemo business templates, templatemo gallery templates, admin dashboard templatemo, 3-column templatemo, va h.k.</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 align-self-center">
+                <div class="section-heading">
+                    <h6>Biz haqimizda</h6>
+                    <h2>Nimani qilib biz onlayn akademiyamizni eng zo‘r qilamiz?</h2>
+                    <p>Biz sifatli onlayn o'quv dasturlarini taqdim etamiz. O'quv jarayoni zamonaviy va intuitiv
+                        tarzda tashkil etilgan.</p>
+                    <div class="main-button">
+                        <a href="#">Batafsil ma'lumot</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="section courses" id="courses">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="section-heading">
+                    <h6>So'nggi kurslar</h6>
+                    <h2 class="courses-title">Oxirgi qoʻshilgan kurslar</h2>
+                </div>
+            </div>
+        </div>
+        <ul class="event_filter">
+            <li>
+                <a class="is_active" href="#!" data-filter="*">Hammasini ko'rish</a>
+            </li>
+            {% for c in categories %}
+            <li>
+                <a href="#!" data-filter=".{{ c.slug }}">{{ c.name }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        <div class="row event_box">
+            {% for c in courses %}
+            <div class="col-lg-4 col-md-6 align-self-center mb-30 event_outer col-md-6 {{ c.category.slug }}">
+
+                <div class="events_item">
+                    <div class="thumb">
+
+                        {% if c.image %}
+                        <a href="{% url 'course_detail' c.id %}">
+                            <img src="{{ c.image.url }}" alt="{{ c.title }}">
+                        </a>
+                        {% else %}
+                        <a href="{% url 'course_detail' c.id %}">
+                            <img src="{% static 'assets/images/default-course.jpg' %}" alt="{{ c.title }}">
+                        </a>
+                        {% endif %}
+
+                        <span class="category">{{ c.category.name }}</span>
+
+                        <span class="price">
+                            <h6><em>$</em>{{ c.price }}</h6>
+                        </span>
+                    </div>
+
+                    <div class="down-content">
+                        <span class="author">Admin tomonidan qoʻshilgan</span>
+
+                        <h4>{{ c.description|truncatewords:12 }}</h4>
+
+                        <a href="{% url 'course_detail' c.id %}" class="main-button mt-2">
+                            Kursga o'tish
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+<div class="section fun-facts">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="wrapper">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="counter">
+                                <h2 class="timer count-title count-number" data-to="150" data-speed="1000"></h2>
+                                <p class="count-text ">Baxtli o'quvchilar</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="counter">
+                                <h2 class="timer count-title count-number" data-to="804" data-speed="1000"></h2>
+                                <p class="count-text ">Kurs soatlari</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="counter">
+                                <h2 class="timer count-title count-number" data-to="50" data-speed="1000"></h2>
+                                <p class="count-text ">Ishga joylashgan o'quvchilar</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="counter end">
+                                <h2 class="timer count-title count-number" data-to="15" data-speed="1000"></h2>
+                                <p class="count-text ">Yillik tajriba</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2 class="team-teachers">Bizning Ustozlar</h2>
+<div class="team section" id="team">
+    <div class="container">
+        <div class="row">
+            {% if teachers %}
+            {% for t in teachers %}
+            <div class="col-lg-3 col-md-6">
+                <div class="team-member">
+                    <div class="main-content">
+                        <img src="{{ t.image.url }}" alt="{{ t.full_name }}">
+                        <span class="category">{{ t.specialty }}</span>
+                        <h4>{{ t.full_name }}</h4>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p>Hozircha ustozlar yo'q</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="section testimonials">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="owl-carousel owl-testimonials">
+                    <div class="item">
+                        <p>“Iltimos, do‘stlaringizga yoki hamkasblaringizga TemplateMo saytini tavsiya qiling. Har
+                            kim shablonlarni yuklab olish uchun saytga kirishi mumkin. Tashrifingiz uchun rahmat.”
+                        </p>
+                        <div class="author">
+                            <img src="{% static 'assets/images/testimonial-author.jpg' %}" alt="">
+                            <span class="category">Full Stack mutaxassis</span>
+                            <h4>Claude David</h4>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, doimiy matn. Bu faqat namunaviy
+                            tavsiya xabari.”</p>
+                        <div class="author">
+                            <img src="{% static 'assets/images/testimonial-author.jpg' %}" alt="">
+                            <span class="category">UI ekspert</span>
+                            <h4>Thomas Jefferson</h4>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p>“Scholar — bu TemplateMo tomonidan taqdim etilgan bepul veb-shablon. Ushbu CSS tartibi
+                            Bootstrap v5.3.0 asosida tayyorlangan.”</p>
+                        <div class="author">
+                            <img src="{% static 'assets/images/testimonial-author.jpg' %}" alt="">
+                            <span class="category">Raqamli animator</span>
+                            <h4>Stella Blair</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 align-self-center">
+                <div class="section-heading">
+                    <h6>Fikrlar</h6>
+                    <h2>Ular biz haqimizda nima deyishadi?</h2>
+                    <p>Turli so‘zlar bilan Google'da bepul CSS shablonlarni qidirishingiz mumkin, masalan:
+                        templatemo portfolio, templatemo gallery va boshqalar.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section events" id="events">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="section-heading">
+                    <h6>Jadval</h6>
+                    <h2>Yaqinlashayotgan tadbirlar</h2>
+                </div>
+            </div>
+            {% if events %}
+            {% for e in events %}
+            <div class="col-lg-12 col-md-6">
+                <div class="item">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="image">
+                                <img src="{{ e.image.url }}" alt="{{ e.title }}">
+                            </div>
+                        </div>
+                        <div class="col-lg-9">
+                            <ul>
+                                <li>
+                                    <span class="category">{{ e.subject }}</span>
+                                    <h4>{{ e.title }}</h4>
+                                </li>
+                                <li>
+                                    <span>Sana:</span>
+                                    <h6>{{ e.date }}</h6>
+                                </li>
+                                <li>
+                                    <span>Davomiyligi:</span>
+                                    <h6>{{ e.duration_hours }} soat</h6>
+                                </li>
+                                <li>
+                                    <span>Narxi:</span>
+                                    <h6>${{ e.price }}</h6>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p>Hozircha tadbirlar yo'q</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="contact-us section" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6  align-self-center">
+                <div class="section-heading">
+                    <h6>Biz bilan bog'laning</h6>
+                    <h2>Istalgan vaqtda bog'lanishingiz mumkin</h2>
+                    <p>Shablonlarimizni tanlaganingiz uchun rahmat. Biz sizga eng yaxshi CSS shablonlarni 100% bepul
+                        taqdim etamiz. Iltimos, saytimizni do'stlaringiz bilan baham ko‘ring.</p>
+                    <div class="special-offer">
+                        <span class="offer">chegirma<br><em>50%</em></span>
+                        <h6>Amal qilish muddati: <em>24 Aprel 2036</em></h6>
+                        <h4>Maxsus taklif <em>50%</em> chegirma!</h4>
+                        <a href="#"><i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="contact-us-content">
+                    <div class="alert alert-warning mb-4" style="font-size: 16px;">
+                        <strong>Diqqat!</strong> Adminning javobini olish uchun Telegramni ulashingiz kerak.
+                        Aks holda javob sizga yetib bormaydi.
+                        <br>
+                        <a href="https://t.me/Mars_F2_1985_bot" class="btn btn-primary btn-sm mt-2">
+                            Telegramni ulash
+                        </a>
+                    </div>
+
+                    <form id="contact-form" action="{% url 'contact' %}" method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <input type="text" name="name" placeholder="Ismingiz..." required>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <input type="email" name="email" placeholder="E-pochta manzilingiz..." required>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <textarea name="message" placeholder="Xabaringiz"></textarea>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <button type="submit" class="orange-button">Xabar yuborish</button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

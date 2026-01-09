@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}{{ course.title }}{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+
+<link rel="stylesheet" href="{% static 'css/detail.css' %}">
+
+<div class="container course-detail-wrapper">
+
+    <div class="course-detail-card">
+
+        <h2 class="fw-bold">{{ course.title }}</h2>
+        <p class="text-secondary">{{ course.description }}</p>
+
+        {% if course.image %}
+        <img src="{{ course.image.url }}">
+        {% endif %}
+
+        <hr class="my-4">
+
+        {% if is_subscribed %}
+        <h4 class="mb-3">Darslar:</h4>
+
+        {% for lesson in lessons %}
+        <a href="{% url 'lesson_detail' lesson.id %}" class="lesson-box d-block">
+            <strong>{{ lesson.title }}</strong>
+        </a>
+        {% endfor %}
+        {% else %}
+
+        <a href="{% url 'buy_course' course.id %}" class="btn btn-warning">
+            Obuna bo‘lish
+        </a>
+
+        {% endif %}
+    </div>
+
+</div>
+
+
+{% endblock %}

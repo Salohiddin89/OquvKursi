@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kursni sotib olish</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="purchase-page">
+
+    <div class="purchase-container">
+        <h2 class="purchase-title">{{ course.title }} kursini sotib olmoqchimisiz?</h2>
+
+        <p class="purchase-price">
+            Narxi: <strong>${{ course.price|floatformat:0 }}</strong>
+        </p>
+
+        <div class="purchase-buttons">
+            <a href="{% url 'payment_page' course.id %}" class="btn-buy">Ha, sotib olaman</a>
+            <a href="{% url 'course_detail' course.id %}" class="btn-cancel">Yo‘q, qaytish</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

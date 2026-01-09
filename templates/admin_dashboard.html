@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/admin_dashboard.css' %}">
+</head>
+
+<body class="admin-page">
+
+    <!-- ✅ Sidebar -->
+    <aside class="sidebar">
+        <h2 class="sidebar-title">Admin Panel</h2>
+
+        <ul class="sidebar-menu">
+            <li><a href="{% url 'admin_dashboard' %}" class="active">📊 Boshqaruv paneli</a></li>
+            <li><a href="{% url 'admin_courses' %}">📚 Kurslar</a></li>
+            <li><a href="{% url 'admin_users' %}">👤 Foydalanuvchilar</a></li>
+            <li><a href="{% url 'admin_messages' %}">💬 Xabarlar</a></li>
+            <li><a href="{% url 'admin_purchases' %}">💵 To‘lovlar</a></li>
+            <li><a href="{% url 'home' %}">🏠 Saytga qaytish</a></li>
+        </ul>
+    </aside>
+
+    <!-- ✅ Main content -->
+    <main class="content">
+        <header class="content-header">
+            <h1>Admin Dashboard</h1>
+            <div class="admin-info">
+                <span>{{ request.user.first_name }} {{ request.user.last_name }}</span>
+                <a href="{% url 'logout' %}" class="logout-btn">Chiqish</a>
+            </div>
+        </header>
+
+        <section class="dashboard-cards">
+
+            <div class="card">
+                <h3>📚 Kurslar</h3>
+                <p>{{ courses_count }} ta kurs</p>
+            </div>
+
+            <div class="card">
+                <h3>👤 Foydalanuvchilar</h3>
+                <p>{{ users_count }} ta foydalanuvchi</p>
+            </div>
+
+            <div class="card">
+                <h3>💬 Xabarlar</h3>
+                <p>{{ messages_count }} ta xabar</p>
+            </div>
+
+            <div class="card">
+                <h3>💵 To‘lovlar</h3>
+                <p>{{ purchases_count }} ta to‘lov</p>
+            </div>
+
+        </section>
+
+        <section class="dashboard-content">
+            {% block admin_content %}
+            <!-- Har bir bo‘lim shu yerga yuklanadi -->
+            {% endblock %}
+        </section>
+
+    </main>
+
+</body>
+
+</html>

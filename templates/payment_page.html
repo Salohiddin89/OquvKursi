@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>To‘lov sahifasi</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body class="purchase-page">
+
+    <div class="payment-container">
+        <h2 class="payment-title">To‘lov ma’lumotlari</h2>
+
+        <p class="payment-info">
+            Kurs: <strong>{{ course.title }}</strong>
+        </p>
+
+        <p class="payment-info">
+            Narxi: <strong>${{ course.price|floatformat:0 }}</strong>
+        </p>
+
+        <p class="payment-info">
+            Karta raqami: <strong>8600 1234 5678 9999</strong>
+        </p>
+
+        <form method="POST" enctype="multipart/form-data" class="payment-form">
+            {% csrf_token %}
+
+            <label class="file-label">To‘lov cheki (rasm):</label>
+            <input type="file" name="receipt" required class="file-input">
+
+            <button class="btn-buy mt-3">Chekni yuborish</button>
+        </form>
+
+        <a href="{% url 'course_detail' course.id %}" class="btn-cancel mt-3">
+            Bekor qilish
+        </a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}{{ lesson.title }}{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/lesson_detail.css' %}">
+
+<div class="container lesson-wrapper">
+
+    <div class="lesson-card">
+
+        <h2 class="lesson-title">{{ lesson.title }}</h2>
+
+        {% if lesson.image %}
+        <img src="{{ lesson.image.url }}">
+        {% endif %}
+
+        <p class="lead">{{ lesson.text }}</p>
+
+        {% if lesson.video_url %}
+        <div class="ratio ratio-16x9 mt-4">
+            <!-- <iframe src="" allowfullscreen></iframe> -->
+            <iframe width="913" height="514" src="{{ lesson.video_url }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        {% endif %}
+
+        <hr class="my-5">
+
+        <h4 class="mb-3">Izohlar</h4>
+
+        <!-- ✅ Izoh yuborish formasi -->
+        <form method="post" class="mb-4">
+            {% csrf_token %}
+            <textarea name="text" class="form-control" rows="3" placeholder="Izoh yozing..." required></textarea>
+            <button class="btn btn-primary mt-2">Yuborish</button>
+        </form>
+
+        <!-- ✅ Izohlar ro‘yxati -->
+        {% for comment in comments %}
+        <div class="comment mb-3 d-flex gap-2">
+
+            {% if comment.user.avatar %}
+            <img src="{{ comment.user.avatar.url }}" class="comment-avatar">
+            {% else %}
+            <div class="comment-avatar placeholder">
+                {{ comment.user.first_name|default:comment.user.username|first|upper }}
+            </div>
+            {% endif %}
+
+            <div>
+                <strong>{{ comment.user.first_name|default:comment.user.username }}</strong>
+                <p class="mb-1">{{ comment.text }}</p>
+                <small class="text-muted">{{ comment.created_at }}</small>
+            </div>
+
+        </div>
+        {% empty %}
+        <p>Hozircha izohlar yo‘q.</p>
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}
